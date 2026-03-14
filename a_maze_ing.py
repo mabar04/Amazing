@@ -37,7 +37,7 @@ def main(filename: str) -> None:
         project_dir = os.path.dirname(os.path.abspath(filename))
         maze_file = os.path.join(project_dir, parsed_Values["output"])
         display_maze(maze_file)
-    except ValueError as e:
+    except (ValueError, KeyboardInterrupt, EOFError) as e:
         print(e)
 
 

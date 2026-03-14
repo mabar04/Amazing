@@ -13,6 +13,8 @@ lint:
 	mypy . --warn-return-any --warn-unused-ignores \
 		--ignore-missing-imports --disallow-untyped-defs \
 		--check-untyped-defs
+build:
+	python -m build 
 
 lint-strict:
 	flake8 .
@@ -25,5 +27,9 @@ clean:
 	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 	find . -type d -name .mypy_cache -exec rm -rf {} + 2>/dev/null || true
 	find . -name "*.pyc" -delete 2>/dev/null || true
+	find . -name "*.whl" -delete
+	find . -name "*.tar.gz" -delete
+	find . -type d -name dist -delete
+
 
 .PHONY: run debug lint lint-strict install clean

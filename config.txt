@@ -4,3 +4,6 @@ ENTRY=11,19
 EXIT=3,2
 OUTPUT_FILE=maze.txt
 PERFECT=False
+
+
+

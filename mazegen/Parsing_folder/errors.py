@@ -68,6 +68,8 @@ class error_handeling:
                     raise ValueError(f"Invalid Exit values {value}")
 
             elif key == "OUTPUT_FILE":
+                if "." not in value:
+                    raise ValueError(f"Invalid output file {value}")
                 str1, str2 = value.split(".")
                 if ((len(str1) <= 0 or len(str2) <= 0) or
                         (not value.endswith(".txt"))):

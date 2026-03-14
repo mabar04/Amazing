@@ -41,7 +41,7 @@ class Parsing:
             "perfect": perfect
         }
         if "SEED" in config:
-            output.update({"seed": config["seed"]})
+            output.update({"seed": config["SEED"]})
         if "ALGO" in config:
-            output.update({"algo": config["algo"]})
+            output.update({"algo": config["ALGO"]})
         return output
