@@ -46,6 +46,7 @@ The config file uses `KEY=VALUE` format, one pair per line. Lines starting with 
 | `OUTPUT_FILE` | Output filename | `OUTPUT_FILE=maze.txt` |
 | `PERFECT` | Perfect maze? (`True`/`False`) | `PERFECT=False` |
 | `SEED` *(optional)* | Seed for reproducibility | `SEED=42` |
+| `ALGO` *(optional)* | Algo for generation | `ALGO=PRIM` or `ALGO=DFS` |
 
 ---
 
@@ -202,6 +203,10 @@ source env/bin/activate
 pip install build
 python -m build
 # output: dist/mazegen-1.0.0-py3-none-any.whl
+```
+or 
+```bash
+make build
 ```
 
 ## Team & Project Management
