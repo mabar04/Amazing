@@ -57,7 +57,7 @@ class error_handeling:
                     int(value1)
                     int(value2)
                 except ValueError:
-                    raise ValueError(f"Invalid Entry values {value}")
+                    raise ValueError(f"Invalid Entry values ({value})")
 
             elif key == "EXIT":
                 try:
@@ -65,7 +65,7 @@ class error_handeling:
                     int(value1)
                     int(value2)
                 except ValueError:
-                    raise ValueError(f"Invalid Exit values {value}")
+                    raise ValueError(f"Invalid Exit values ({value})")
 
             elif key == "OUTPUT_FILE":
                 if "." not in value:
@@ -77,7 +77,12 @@ class error_handeling:
 
             elif key == "PERFECT":
                 if value != "True" and value != "False":
-                    raise ValueError(f"Invalid Perfect value {value}")
+                    raise ValueError(f"Invalid Perfect value {value} "
+                                     f"(True / False expected)")
+            elif key == "ALGO":
+                if value != "DFS" or value != "PRIM":
+                    raise ValueError(f"Invalid ALGO value {value} "
+                                     f"(DFS / PRIM expected)")
 
     @classmethod
     def check_boundries(cls, config: Dict[str, Any]) -> None:
