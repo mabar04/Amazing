@@ -80,7 +80,7 @@ class error_handeling:
                     raise ValueError(f"Invalid Perfect value {value} "
                                      f"(True / False expected)")
             elif key == "ALGO":
-                if value != "DFS" or value != "PRIM":
+                if value != "DFS" and value != "PRIM":
                     raise ValueError(f"Invalid ALGO value {value} "
                                      f"(DFS / PRIM expected)")
 
